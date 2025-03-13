@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { NotesModule } from './notes/notes.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { NotesModule } from './notes/notes.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    UsersModule, NotesModule  // 👈 Asegúrate de que está aquí
+    UsersModule, NotesModule, AuthModule 
   ],
 })
 export class AppModule {}
